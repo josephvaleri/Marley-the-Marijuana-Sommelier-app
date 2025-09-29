@@ -113,7 +113,7 @@ export default function AvatarMarley({ state, className = '' }: AvatarMarleyProp
     <div className={`relative ${className}`}>
       <motion.div
         className={`relative rounded-2xl overflow-hidden ${getGlowClass()}`}
-        animate={getStateAnimation()}
+        animate={getStateAnimation() as any}
         style={{
           width: 300,
           height: 300
