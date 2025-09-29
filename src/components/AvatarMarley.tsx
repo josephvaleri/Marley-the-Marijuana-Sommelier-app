@@ -37,7 +37,7 @@ export default function AvatarMarley({ state, className = '' }: AvatarMarleyProp
             duration: 6,
             repeat: Infinity,
             repeatType: 'mirror' as const,
-            ease: 'easeInOut'
+            ease: 'easeInOut' as any
           }
         }
       case 'listening':
@@ -47,7 +47,7 @@ export default function AvatarMarley({ state, className = '' }: AvatarMarleyProp
             duration: 2,
             repeat: Infinity,
             repeatType: 'mirror' as const,
-            ease: 'easeInOut'
+            ease: 'easeInOut' as any
           }
         }
       case 'thinking':
@@ -56,7 +56,7 @@ export default function AvatarMarley({ state, className = '' }: AvatarMarleyProp
           transition: {
             duration: 1.5,
             repeat: Infinity,
-            ease: 'easeInOut'
+            ease: 'easeInOut' as any
           }
         }
       case 'answering':
@@ -66,7 +66,7 @@ export default function AvatarMarley({ state, className = '' }: AvatarMarleyProp
             duration: 0.8,
             repeat: Infinity,
             repeatType: 'mirror' as const,
-            ease: 'easeInOut'
+            ease: 'easeInOut' as any
           }
         }
       case 'clarifying':
@@ -75,7 +75,7 @@ export default function AvatarMarley({ state, className = '' }: AvatarMarleyProp
           transition: {
             duration: 1,
             repeat: 2,
-            ease: 'easeInOut'
+            ease: 'easeInOut' as any
           }
         }
       case 'celebrating':
@@ -158,7 +158,7 @@ export default function AvatarMarley({ state, className = '' }: AvatarMarleyProp
             transition={{
               duration: 2,
               repeat: Infinity,
-              ease: 'easeInOut'
+              ease: 'easeInOut' as any
             }}
           />
         )}
