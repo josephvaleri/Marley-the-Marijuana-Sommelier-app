@@ -134,8 +134,8 @@ export default function StrainsPage() {
                   <h4 className="text-sm font-medium mb-2">Conditions:</h4>
                   <div className="flex flex-wrap gap-1">
                     {strain.strain_conditions.slice(0, 2).map((condition: any) => (
-                      <Badge key={condition.conditions.slug} variant="outline" className="text-xs">
-                        {condition.conditions.name}
+                      <Badge key={condition.conditions[0]?.slug || 'unknown'} variant="outline" className="text-xs">
+                        {condition.conditions[0]?.name || 'Unknown'}
                       </Badge>
                     ))}
                     {strain.strain_conditions.length > 2 && (

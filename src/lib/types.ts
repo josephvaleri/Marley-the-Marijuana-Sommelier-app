@@ -56,6 +56,12 @@ export interface Strain {
       slug: any
     }[]
   }>
+  strain_conditions?: Array<{
+    conditions: {
+      name: any
+      slug: any
+    }[]
+  }>
 }
 
 export interface Effect {
