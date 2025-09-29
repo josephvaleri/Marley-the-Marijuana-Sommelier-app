@@ -38,10 +38,10 @@ interface StrainDetails {
   }>
   strain_typical_ranges?: Array<{
     cannabinoids: {
-      name: string
-    }
-    min_value: number
-    max_value: number
+      name: any
+    }[]
+    min_value: any
+    max_value: any
   }>
 }
 
