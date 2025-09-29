@@ -50,6 +50,12 @@ export interface Strain {
   chemovar_type?: string
   description?: string
   search_tsv?: string
+  strain_effects?: Array<{
+    effects: {
+      name: any
+      slug: any
+    }[]
+  }>
 }
 
 export interface Effect {

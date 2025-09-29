@@ -116,8 +116,8 @@ export default function StrainsPage() {
                   <h4 className="text-sm font-medium mb-2">Effects:</h4>
                   <div className="flex flex-wrap gap-1">
                     {strain.strain_effects.slice(0, 3).map((effect: any) => (
-                      <Badge key={effect.effects.slug} variant="secondary" className="text-xs">
-                        {effect.effects.name}
+                      <Badge key={effect.effects[0]?.slug || 'unknown'} variant="secondary" className="text-xs">
+                        {effect.effects[0]?.name || 'Unknown'}
                       </Badge>
                     ))}
                     {strain.strain_effects.length > 3 && (
