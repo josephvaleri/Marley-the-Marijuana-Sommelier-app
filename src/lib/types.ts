@@ -2,6 +2,7 @@ export interface User {
   id: string
   email: string
   app_role: 'admin' | 'moderator' | 'user'
+  avatar_url?: string
   trial_started_at?: string
   subscription_status?: string
   price_id?: string
