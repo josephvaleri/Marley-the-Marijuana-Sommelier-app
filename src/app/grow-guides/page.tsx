@@ -57,7 +57,7 @@ export default function GrowGuidesPage() {
   const filteredGuides = guides.filter(guide =>
     guide.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     guide.content?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    guide.strains?.name.toLowerCase().includes(searchTerm.toLowerCase())
+    guide.strains?.some(strain => strain.name?.toLowerCase().includes(searchTerm.toLowerCase()))
   )
 
   if (isLoading) {
