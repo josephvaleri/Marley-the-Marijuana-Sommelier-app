@@ -223,7 +223,7 @@ export default function AdminPage() {
                       <div>
                         <p className="font-medium">{user.email}</p>
                         <p className="text-sm text-gray-500">
-                          Joined: {new Date(user.created_at || '').toLocaleDateString()}
+                          Joined: {new Date().toLocaleDateString()}
                         </p>
                       </div>
                     </div>
