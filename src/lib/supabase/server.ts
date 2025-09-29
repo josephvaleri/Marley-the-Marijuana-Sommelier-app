@@ -1,9 +1,9 @@
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import env from '@/lib/env'
+import env from '@/lib/env.mjs'
 
-export const createClient = () => {
-  const cookieStore = cookies()
+export const createClient = async () => {
+  const cookieStore = await cookies()
 
   return createServerClient(
     env.SUPABASE_URL,
@@ -45,4 +45,3 @@ export const createServiceClient = () => {
     }
   )
 }
-

@@ -1,7 +1,7 @@
 import { createServiceClient } from '@/lib/supabase/server'
 import { AnswerResult, QuestionType } from '@/lib/types'
 import OpenAI from 'openai'
-import env from '@/lib/env'
+import env from '@/lib/env.mjs'
 import { detectQuestionType } from './question-detector'
 
 const openai = new OpenAI({
@@ -118,7 +118,9 @@ async function tryDatabaseAnswer(
     return {
       md: "I couldn't search the database right now.",
       source: 'database',
-      confidence: 0.1
+      confidence: 0.1,
+      question_id: '',
+      answer_id: ''
     }
   }
   
@@ -127,14 +129,18 @@ async function tryDatabaseAnswer(
       md: formatDatabaseResults(result, questionType),
       source: 'database',
       confidence: Math.min(result.length / 5, 1),
-      citations: result.map((r: any) => r.name || r.title).slice(0, 3)
+      citations: result.map((r: any) => r.name || r.title).slice(0, 3),
+      question_id: '',
+      answer_id: ''
     }
   }
   
   return {
     md: "I couldn't find specific information in the database for that question.",
     source: 'database',
-    confidence: 0.1
+    confidence: 0.1,
+    question_id: '',
+    answer_id: ''
   }
 }
 
@@ -160,7 +166,9 @@ async function tryReferenceAnswer(
       return {
         md: "I couldn't find relevant reference documents.",
         source: 'reference',
-        confidence: 0.1
+        confidence: 0.1,
+        question_id: '',
+        answer_id: ''
       }
     }
     
@@ -168,14 +176,18 @@ async function tryReferenceAnswer(
       md: formatReferenceResults(chunks),
       source: 'reference',
       confidence: Math.min(chunks.length / 8, 1),
-      citations: chunks.map((c: any) => c.title).slice(0, 3)
+      citations: chunks.map((c: any) => c.title).slice(0, 3),
+      question_id: '',
+      answer_id: ''
     }
   } catch (error) {
     console.error('Reference search error:', error)
     return {
       md: "I couldn't search reference documents right now.",
       source: 'reference',
-      confidence: 0.1
+      confidence: 0.1,
+      question_id: '',
+      answer_id: ''
     }
   }
 }
@@ -208,7 +220,9 @@ Answer the user's question about ${questionType.type} in a helpful, informative 
   return {
     md: completion.choices[0]?.message?.content || "I'm sorry, I couldn't generate an answer.",
     source: 'openai',
-    confidence: 0.8
+    confidence: 0.8,
+    question_id: '',
+    answer_id: ''
   }
 }
 
