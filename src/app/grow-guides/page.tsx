@@ -103,9 +103,9 @@ export default function GrowGuidesPage() {
           <Card key={guide.guide_id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <CardTitle className="text-lg">{guide.title}</CardTitle>
-              {guide.strains && (
+              {guide.strains && guide.strains.length > 0 && (
                 <Badge variant="outline" className="w-fit">
-                  {guide.strains.name}
+                  {guide.strains[0].name}
                 </Badge>
               )}
             </CardHeader>
