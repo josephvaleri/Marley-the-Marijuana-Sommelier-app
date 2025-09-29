@@ -1,4 +1,4 @@
-import { AvatarMarley } from '@/components/AvatarMarley'
+import AvatarMarley from '@/components/AvatarMarley'
 
 export default function AuthLayout({
   children,
