@@ -6,7 +6,7 @@ import { AnswerResult } from '@/lib/types'
 import { revalidatePath } from 'next/cache'
 
 export async function submitQuestion(questionText: string): Promise<AnswerResult> {
-  const supabase = createClient()
+  const supabase = await createClient()
   
   const { data: { user } } = await supabase.auth.getUser()
   
@@ -25,7 +25,7 @@ export async function submitFeedback(
   answerId: string,
   feedback: 1 | -1
 ): Promise<void> {
-  const supabase = createClient()
+  const supabase = await createClient()
   
   const { data: { user }, error: authError } = await supabase.auth.getUser()
   
@@ -50,7 +50,7 @@ export async function submitFeedback(
 }
 
 export async function toggleFavorite(strainId: string): Promise<void> {
-  const supabase = createClient()
+  const supabase = await createClient()
   
   const { data: { user }, error: authError } = await supabase.auth.getUser()
   
@@ -100,7 +100,7 @@ export async function postReview(
   rating: number,
   text: string
 ): Promise<void> {
-  const supabase = createClient()
+  const supabase = await createClient()
   
   const { data: { user }, error: authError } = await supabase.auth.getUser()
   
