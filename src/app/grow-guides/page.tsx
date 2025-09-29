@@ -15,8 +15,8 @@ interface GrowGuide {
   content?: string
   strain_id?: string
   strains?: {
-    name: string
-  }
+    name: any
+  }[]
 }
 
 export default function GrowGuidesPage() {
