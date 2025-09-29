@@ -246,7 +246,7 @@ export default function StrainPage() {
                     <div className="space-y-2">
                       {strain.strain_typical_ranges.map((range, index) => (
                         <div key={index} className="flex items-center justify-between">
-                          <span className="font-medium">{range.cannabinoids.name}</span>
+                          <span className="font-medium">{range.cannabinoids[0]?.name || 'Unknown'}</span>
                           <span className="text-gray-600">
                             {range.min_value}% - {range.max_value}%
                           </span>
