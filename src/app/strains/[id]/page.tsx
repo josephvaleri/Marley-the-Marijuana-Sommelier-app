@@ -20,15 +20,15 @@ interface StrainDetails {
   chemovar_type?: string
   strain_effects?: Array<{
     effects: {
-      name: string
-      slug: string
-    }
+      name: any
+      slug: any
+    }[]
   }>
   strain_conditions?: Array<{
     conditions: {
-      name: string
-      slug: string
-    }
+      name: any
+      slug: any
+    }[]
   }>
   strain_notes?: Array<{
     aroma_flavor_notes: {
