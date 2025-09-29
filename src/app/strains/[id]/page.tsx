@@ -364,7 +364,7 @@ export default function StrainPage() {
                   <div className="space-y-1">
                     {strain.strain_effects.slice(0, 3).map((effect, index) => (
                       <div key={index} className="text-sm text-gray-600">
-                        {effect.effects.name}
+                        {effect.effects[0]?.name || 'Unknown'}
                       </div>
                     ))}
                   </div>
