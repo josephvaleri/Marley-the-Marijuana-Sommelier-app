@@ -164,7 +164,7 @@ export default function AccountPage() {
                   <div>
                     <label className="text-sm font-medium text-gray-700">Member Since</label>
                     <p className="text-gray-900">
-                      {new Date(user.user_metadata?.created_at || Date.now()).toLocaleDateString()}
+                      {new Date().toLocaleDateString()}
                     </p>
                   </div>
                 </CardContent>
