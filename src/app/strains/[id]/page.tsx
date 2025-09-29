@@ -268,7 +268,7 @@ export default function StrainPage() {
                     <div className="flex flex-wrap gap-2">
                       {strain.strain_effects.map((effect, index) => (
                         <Badge key={index} variant="secondary">
-                          {effect.effects.name}
+                          {effect.effects[0]?.name || 'Unknown'}
                         </Badge>
                       ))}
                     </div>
@@ -285,7 +285,7 @@ export default function StrainPage() {
                     <div className="flex flex-wrap gap-2">
                       {strain.strain_conditions.map((condition, index) => (
                         <Badge key={index} variant="outline">
-                          {condition.conditions.name}
+                          {condition.conditions[0]?.name || 'Unknown'}
                         </Badge>
                       ))}
                     </div>
